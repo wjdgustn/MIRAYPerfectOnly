@@ -10,7 +10,7 @@ namespace MIRAYPerfectOnly.MainPatch {
     [HarmonyPatch(typeof(ScoreBoard), "write")]
 
     internal static class PerfectOnly {
-        private static void Prefix(PauseUI __instance, JudgeType type) {
+        private static void Prefix(JudgeType type) {
             if (type == JudgeType.miss) SceneManager.LoadScene("what");
         }
     }
