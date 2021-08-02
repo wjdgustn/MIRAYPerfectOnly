@@ -1,0 +1,9 @@
+{
+  "Id": "MIRAYPerfectOnly",
+  "DisplayName": "MIRAYPerfectOnly",
+  "Author": "HYONSU",
+  "Version": "0.0.1",
+  "AssemblyName": "MIRAYPerfectOnly.dll",
+  "EntryMethod": "MIRAYPerfectOnly.Main.Load",
+  "Repository": ""
+}

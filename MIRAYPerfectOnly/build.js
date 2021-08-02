@@ -35,23 +35,18 @@ setImmediate(async () => {
 
         console.log('Successful.')
     } else {
-        if(!args.norestart) await cp.exec('taskkill /f /im "a da"*')
+        if(!args.norestart) await cp.exec('taskkill /f /im "MIRAY.exe"')
 
         setTimeout(async () => {
-            const appPath = await findSteamAppById(977950)
+            const appPath = await findSteamAppById(1410600)
             const modPath = path.join(appPath, 'Mods', info.Id)
-            const r68ModPath = path.join('D:\\steam\\steamapps\\common\\A Dance of Fire and Ice_r68', 'Mods', info.Id)
             if(!args.norestart) rimraf.sync(modPath)
-            if(!args.norestart) rimraf.sync(r68ModPath)
             if(!args.norestart) fs.mkdirSync(modPath)
-            if(!args.norestart) fs.mkdirSync(r68ModPath)
             fs.copyFileSync(`Release/${info.Id}.dll`, path.join(modPath, info.Id + '.dll'))
             fs.copyFileSync('Release/Info.json', path.join(modPath, 'Info.json'))
-            fs.copyFileSync(`Release/${info.Id}.dll`, path.join(r68ModPath, info.Id + '.dll'))
-            fs.copyFileSync('Release/Info.json', path.join(r68ModPath, 'Info.json'))
 
             if(!args.norestart) try {
-                await cp.exec('explorer steam://rungameid/977950')
+                await cp.exec('explorer steam://rungameid/1410600')
             } catch (e) {
             }
 
